@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Broadcast Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Login Page -->
+  <div id="loginPage" class="page">
+    <h4>Login</h4>
+    <form id="loginForm" autocomplete="on">
+      <div class="e" id="e" style="color: white; font-weight: bold;">
+        <label for="email">Email:</label>
+      </div>
+      
+
+      <input type="email" id="email" name="email" autocomplete="email" required>
+      <label for="password" style="color: white; font-weight: bold;">Password:</label>
+
+
+      <input type="password" id="password" name="password" autocomplete="current-password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p><a href="#" id="forgotPasswordLink">Forgot Password?</a></p>
+    <p><a href="#" id="signUpLink">Sign Up</a></p>
+  </div>
+
+  <!-- Sign Up Page -->
+  <div id="signUpPage" class="page" style="display:none;">
+    <h2>Sign Up</h2>
+    <form id="signUpForm" autocomplete="on">
+      <label for="signUpEmail">Email:</label>
+      <input type="email" id="signUpEmail" name="email" autocomplete="email" required>
+      <label for="signUpPassword">Password:</label>
+      <input type="password" id="signUpPassword" name="password" autocomplete="new-password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p><a href="#" id="backToLoginLink">Back to Login</a></p>
+  </div>
+
+  <!-- Forgot Password Page -->
+  <div id="forgotPasswordPage" class="page" style="display:none;">
+    <h2>Forgot Password</h2>
+    <form id="forgotPasswordForm">
+      <label for="forgotEmail">Enter your email to reset password:</label>
+      <input type="email" id="forgotEmail" required>
+      <button type="submit">Reset Password</button>
+    </form>
+    <p><a href="#" id="backToLoginLinkForgot">Back to Login</a></p>
+  </div>
+
+  <!-- Main Broadcast Page -->
+  <div id="mainPage" class="page" style="display:none;">
+    <div class="header">
+      <button id="filterBtn">Filter</button>
+      <h3>Broadcasts</h3>
+      <div class="actions">
+        <input type="text" id="searchInput" placeholder="Search by Part Number">
+        <button id="postBtn">Post Broadcast</button>
+        <button id="removeBtn">Remove Broadcast</button>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </div>
+    
+    <div id="broadcastList"></div>
+  </div>
+
+  <!-- Post Broadcast Page -->
+  <div id="postPage" class="page" style="display:none;">
+    <button id="backBtn" class="backBtn">&#8592; Back</button>
+    <h2>Post Broadcast</h2>
+    <form id="postForm">
+      <label for="category">Category:</label>
+      <select id="category" required>
+        <option value="WTB">Want To Buy</option>
+        <option value="WTS">Want To Sell</option>
+        <option value="RFQ">Request For Quotation</option>
+      </select>
+      <label for="partNumber">Part Number:</label>
+      <input type="text" id="partNumber" required>
+      <label for="condition">Condition:</label>
+      <select id="condition" required>
+        <option value="New">New</option>
+        <option value="New Pulled">New Pulled</option>
+        <option value="New Bulk">New Bulk</option>
+        <option value="OEM">OEM</option>
+        <option value="Used">Used</option>
+        <option value="Refurbished">Refurbished</option>
+      </select>
+      <button type="submit">Post</button>
+    </form>
+  </div>
+
+  <!-- Remove Broadcast Page -->
+  <div id="removePage" class="page" style="display:none;">
+    <button id="backRemoveBtn" class="backBtn">&#8592; Back</button>
+    <h2>Remove Broadcast</h2>
+    <form id="removeForm">
+      <label for="removeCategory">Category:</label>
+      <select id="removeCategory" required>
+        <option value="WTB">Want To Buy</option>
+        <option value="WTS">Want To Sell</option>
+        <option value="RFQ">Request For Quotation</option>
+      </select>
+      <label for="removePartNumber">Part Number:</label>
+      <input type="text" id="removePartNumber" required>
+      <label for="condition">Condition:</label>
+      <select id="condition" required>
+        <option value="New">New</option>
+        <option value="New Pulled">New Pulled</option>
+        <option value="New Bulk">New Bulk</option>
+        <option value="OEM">OEM</option>
+        <option value="Used">Used</option>
+        <option value="Refurbished">Refurbished</option>
+      </select>  
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
